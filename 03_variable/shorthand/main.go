@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+ var zewnatrz string="deklaracja poza funkcja"
 func main()  {
 	//wersja skrócona wewnątrz funkcji
 	a := "string"
@@ -13,4 +14,6 @@ func main()  {
 	fmt.Printf("%v \n",b)
 	fmt.Printf("%v \n",c)
 	fmt.Printf("%v \n",d)
+
+	fmt.Println("%v \n",zewnatrz)
 }
