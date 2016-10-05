@@ -1,7 +1,7 @@
 package main
 
 import "strconv"
-import "fmt"
+
 
 func digitalRoot(n int) int {
 	a := strconv.Itoa(n)
@@ -26,8 +26,3 @@ func digitalRoot(n int) int {
 
 }
 
-func main() {
-
-	fmt.Println(digitalRoot(942))
-
-}
