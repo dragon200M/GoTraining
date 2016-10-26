@@ -25,3 +25,4 @@ func average(n ...float64) float64 {
 	return total / float64(len(n))
 
 }
+
