@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+
 )
 
 func odw(c string) string {
@@ -306,6 +307,26 @@ func search(n [10]int, x int) bool {
 	return s
 }
 
+func smallBigLetter(s string) string {
+	str := []rune(s)
+	count := 0
+	tmp :=make([]rune,len(s))
+
+	for i:=0;i<len(str);i++{
+		if count % 2 == 1{
+			tmp[i] = str[i]
+			count ++
+		}else if count % 2 == 0{
+			tmp[i] = str[i]-32
+			count ++
+		}
+	}
+
+
+
+	return string(tmp)
+}
+
 func main() {
 	fmt.Println("Odwrotność: ")
 	fmt.Println(odw("abcd"), "-> dcba")
@@ -357,5 +378,8 @@ func main() {
 
 	fmt.Println("Dominanta: ")
 	fmt.Println(dominanta([]int{1,2,1,2,3,2}))
+
+	fmt.Println("Mała duża litera: ")
+	fmt.Println(smallBigLetter("abcd"))
 
 }
