@@ -204,8 +204,29 @@ func sumDigit2(n int) int {
 }
 
 
+func pow(a float64, b float64) float64{
 
+	wynik := 1.0
 
+	if b > 0 {
+		for b > 0 {
+			wynik *= a
+			b -=1
+		}
+
+	}
+
+	if b < 0 {
+		for b < 0 {
+			wynik *= a
+			b +=1
+		}
+		wynik = 1/wynik
+
+	}
+
+	return  wynik
+}
 
 
 func main() {
@@ -246,6 +267,10 @@ func main() {
 	fmt.Println("Suma Cyfr: ")
 	fmt.Println(sumDigit(148))
 	fmt.Println(sumDigit2(1234))
+
+	fmt.Println("Potęga: ")
+	fmt.Println(pow(6,3))
+	fmt.Println(pow(2,-1))
 
 
 }
