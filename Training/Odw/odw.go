@@ -256,6 +256,56 @@ func even(n []int) string{
 	return  str
 }
 
+func dominanta(n []int)int{
+
+	var l [10]int //wartosc
+	var w [10]int //ilosc
+
+
+
+	for i := 0; i<len(n) ; i++{
+
+			if !search(l,n[i]){
+				l[i] = n[i]
+			}
+	}
+
+	for j:=0;j<len(l);j++ {
+
+		for k:=0; k<len(n);k++{
+			if l[j] == n[k]{
+				w[j]+=1
+		}
+		}
+	}
+
+	max := w[0]
+	in := 0
+	for l:=1;l<len(w);l++{
+		if w[l] > max{
+			max = w[l]
+			in = l
+		}
+	}
+
+	return  l[in]
+}
+
+func search(n [10]int, x int) bool {
+
+	s := false
+
+	for i :=0;i<len(n);i++{
+		if n[i] == x{
+			s = true
+
+		}
+
+	}
+
+	return s
+}
+
 func main() {
 	fmt.Println("Odwrotność: ")
 	fmt.Println(odw("abcd"), "-> dcba")
@@ -304,5 +354,8 @@ func main() {
 
 	fmt.Println("Parzysta: ")
 	fmt.Println(even([]int{1,2,3,4,5,6,7,9,11,8}))
+
+	fmt.Println("Dominanta: ")
+	fmt.Println(dominanta([]int{1,2,1,2,3,2}))
 
 }
