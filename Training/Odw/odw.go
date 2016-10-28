@@ -33,5 +33,7 @@ func main()  {
 	fmt.Println(odw("abcde"),"-> edcba")
 	fmt.Println(odw2("abcd"),"-> dcba")
 	fmt.Println(odw2("abcde"),"-> edcba")
+
 }
+
 
