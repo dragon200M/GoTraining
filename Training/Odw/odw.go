@@ -229,6 +229,33 @@ func pow(a float64, b float64) float64{
 }
 
 
+func sr(n []float64) float64{
+
+	var wynik float64
+	var li float64
+
+	for _,i := range n {
+		wynik +=i
+		li +=1
+
+	}
+
+	return wynik/li
+
+}
+
+func even(n []int) string{
+
+	str := ""
+	for _ , i := range n {
+		if i % 2 == 0{
+			str += strconv.Itoa(i)+ " jest parzysta \n"
+		}
+
+	}
+	return  str
+}
+
 func main() {
 	fmt.Println("Odwrotność: ")
 	fmt.Println(odw("abcd"), "-> dcba")
@@ -272,5 +299,10 @@ func main() {
 	fmt.Println(pow(6,3))
 	fmt.Println(pow(2,-1))
 
+	fmt.Println("Srednia: ")
+	fmt.Println(sr([]float64{1.2,2.5,3,4}))
+
+	fmt.Println("Parzysta: ")
+	fmt.Println(even([]int{1,2,3,4,5,6,7,9,11,8}))
 
 }
