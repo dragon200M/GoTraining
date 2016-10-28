@@ -38,6 +38,31 @@ func bez(n int) int{
 	return 0
 }
 
+func sum(s []float64) float64{
+
+	var wynik float64 = 0
+
+	for i := 0; i < len(s) ; i++ {
+		wynik += s[i]
+
+	}
+
+
+	return wynik
+
+}
+
+func  sum2(s []float64) float64  {
+
+	var wynik float64= 0.0
+	for _,i := range s{
+		wynik += i
+
+	}
+	return wynik
+
+}
+
 func main()  {
 
 	fmt.Println(odw("abcd"),"-> dcba")
@@ -51,6 +76,9 @@ func main()  {
 	fmt.Println(bez(8))
 	fmt.Println(bez(-8))
 
+
+	fmt.Println(sum([]float64{1,2,3,-1,45}))
+	fmt.Println(sum2([]float64{1,2,3,-1,45}))
 }
 
 
