@@ -27,12 +27,29 @@ func odw2(c string) string{
 	return string(r)
 }
 
+func bez(n int) int{
+
+	if n >= 0{
+		return n
+	}else if (n < 0) {
+
+		return n*(-1)
+	}
+	return 0
+}
+
 func main()  {
 
 	fmt.Println(odw("abcd"),"-> dcba")
 	fmt.Println(odw("abcde"),"-> edcba")
 	fmt.Println(odw2("abcd"),"-> dcba")
 	fmt.Println(odw2("abcde"),"-> edcba")
+
+
+	fmt.Println(bez(-1))
+	fmt.Println(bez(-(-1)))
+	fmt.Println(bez(8))
+	fmt.Println(bez(-8))
 
 }
 
