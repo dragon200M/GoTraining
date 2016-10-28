@@ -147,6 +147,65 @@ func findFirstX(tab []int, x int) (string,int){
 	return "Nie znaleziono x:",-1
 }
 
+func binarySearch(tab []int, x int) int{
+
+	lower := 0
+	upper := len(tab)-1
+
+
+	for lower <= upper {
+		middle := lower + (upper - lower)/2
+
+		if tab[middle] == x {
+
+
+			return middle
+
+		}
+
+		if tab[middle] > x {
+
+			upper = middle - 1
+		}
+
+		if tab[middle] < x {
+			lower = middle + 1
+		}
+	}
+
+	return -1
+}
+
+
+func sumDigit(n int) int64 {
+
+	var wynik int64
+
+	str := strconv.Itoa(n)
+	for _, i := range str{
+		tmp, _:= strconv.ParseInt(string(i),10,64)
+		wynik +=tmp
+	}
+
+	return wynik
+}
+
+func sumDigit2(n int) int {
+
+	wynik :=0
+
+	for n != 0{
+		wynik += n%10
+		n = n/10
+
+	}
+
+	return wynik
+}
+
+
+
+
 
 
 func main() {
@@ -178,5 +237,15 @@ func main() {
 	fmt.Println("Pierwszy element:  ")
 	fmt.Println(findFirstX([]int{9,7,10,7,8},11))
 	fmt.Println(findFirstX([]int{9,7,10,7,8},10))
+
+
+	fmt.Println("Wyszukiwanie:  ")
+	fmt.Println(binarySearch([]int{1,2,3,4,5,6,7,9,11},11))
+	fmt.Println(binarySearch([]int{1,2,3,4,5,6,7},6))
+
+	fmt.Println("Suma Cyfr: ")
+	fmt.Println(sumDigit(148))
+	fmt.Println(sumDigit2(1234))
+
 
 }
