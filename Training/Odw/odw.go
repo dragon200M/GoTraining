@@ -135,6 +135,20 @@ func minMax(tab []int) string{
 	return str
 }
 
+func findFirstX(tab []int, x int) (string,int){
+
+	i := 0
+	for i < len(tab){
+		if tab[i] == x {
+			return "Znaleziono x pod indeksem:", i
+		}
+		i++
+	}
+	return "Nie znaleziono x:",-1
+}
+
+
+
 func main() {
 	fmt.Println("Odwrotność: ")
 	fmt.Println(odw("abcd"), "-> dcba")
@@ -160,5 +174,9 @@ func main() {
 
 	fmt.Println("MinMax:  ")
 	fmt.Println(minMax([]int{9,1,10,7,8}))
+
+	fmt.Println("Pierwszy element:  ")
+	fmt.Println(findFirstX([]int{9,7,10,7,8},11))
+	fmt.Println(findFirstX([]int{9,7,10,7,8},10))
 
 }
