@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	
+
 
 	r1 := `(p[0-9]+:)+`
 
@@ -28,7 +28,7 @@ func main() {
 
 	scanner := bufio.NewScanner(file)
 
-	var p [10000]string
+	var p [100]string
 	i := 0
 
 	for scanner.Scan() {
@@ -37,6 +37,8 @@ func main() {
 			i++
 		}
 	}
+
+	fmt.Println("Pytań jest:",i)
 
 	r := rand.NewSource(time.Now().UnixNano())
 	s := rand.New(r)
@@ -52,10 +54,13 @@ func main() {
 
 	for z < 5 {
 		zm := s.Intn(i)
-		fmt.Println(p[zm])
 
-		file2.WriteString(p[zm] + "\n")
-		z++
+			fmt.Println(p[zm])
+			file2.WriteString(p[zm] + "\n")
+
+			z++
+
+
 	}
 
 }
