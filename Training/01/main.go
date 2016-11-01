@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 
-	fmt.Println(odwInt(1234))
+	fmt.Println(odwInt(3234))
 	fmt.Println(odwInt(123))
 	fmt.Println(odwInt(1230))
 
@@ -12,7 +12,7 @@ func main() {
 
 	fmt.Println(odwNapis2("abcd"))
 
-	fmt.Println(odwInt2(1234))
+	fmt.Println(odwInt2(3234))
 	fmt.Println(odwInt2(123))
 	fmt.Println(odwInt2(1230))
 
