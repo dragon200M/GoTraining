@@ -26,7 +26,13 @@ func main() {
 
 	defer file.Close()
 
+
+
 	scanner := bufio.NewScanner(file)
+
+
+
+
 
 	var p [100]string
 	i := 0
@@ -43,6 +49,7 @@ func main() {
 	r := rand.NewSource(time.Now().UnixNano())
 	s := rand.New(r)
 	z := 0
+
 
 	file2, err2 := os.Create("zadanie")
 
@@ -62,5 +69,9 @@ func main() {
 
 
 	}
+
+
+
+
 
 }
