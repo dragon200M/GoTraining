@@ -70,7 +70,7 @@ func main() {
 
 
 func addNumbers(number string) [1000]int64{
-	//removing whitespace from number string
+	//removing whitespace from string "number"
 
 
 
