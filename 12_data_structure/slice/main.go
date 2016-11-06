@@ -14,5 +14,11 @@ func main() {
 		fmt.Println("Len:",len(t),"Cap:",cap(t),"Value:",t[i])
 	}
 
+	t2 := []string{"a","b","c","d","e"}
+
+	fmt.Println(t2[0:2])
+	fmt.Println(t2[2:])
+
+
 
 }
