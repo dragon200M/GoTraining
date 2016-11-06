@@ -20,5 +20,25 @@ func main() {
 	fmt.Println(t2[2:])
 
 
+	record :=make([][]string,0)
+
+	s1 :=make([]string,4)
+	s1[0]= "a"
+	s1[1]= "a"
+	s1[2]= "a"
+	s1[3]= "a"
+
+	s2 :=make([]string,4)
+	s2[0]= "b"
+	s2[1]= "b"
+	s2[2]= "b"
+	s2[3]= "b"
+
+	record = append(record,s1)
+	record = append(record,s2)
+
+	fmt.Println(record)
+
+
 
 }
