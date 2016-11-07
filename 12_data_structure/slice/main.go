@@ -39,6 +39,16 @@ func main() {
 
 	fmt.Println(record)
 
+	s := []string{}
+
+
+	s = append(s,"Maciej")
+	s =append(s,"Łucja")
+
+	fmt.Println(s)//[Maciej Łucja]
+	fmt.Println(s[1])//[Łucja]
+
+
 
 
 }
