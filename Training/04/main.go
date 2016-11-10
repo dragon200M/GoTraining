@@ -9,6 +9,21 @@ import ("fmt"
 
 func main() {
 
+
+	/*
+	slownik.csv
+
+	angielski,polski,overcome,przezwyciężać
+	angielski,polski,whether,czy
+	angielski,polski,iterative,wielokrotny
+	angielski,polski,gleaned,zbierana
+	angielski,polski,enhancements,udoskonalenia
+	angielski,polski,near-term,w najbliższej przyszłości
+	*/
+
+
+
+
 	r:=`[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]+`
 	var valid = regexp.MustCompile(r)
 
