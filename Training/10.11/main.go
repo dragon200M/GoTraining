@@ -16,8 +16,10 @@ func main() {
 	fmt.Println()
 	fmt.Println(fibR(5))
 
-	fmt.Println(ul(8811))
-	fmt.Println(ul2(8811))
+	fmt.Println(ul(8967))
+	fmt.Println(ul2(8967))
+
+	fmt.Println(sum(12345))
 }
 
 //odwrócenie integera
@@ -152,3 +154,21 @@ func ul2(n int) (float32, int) {
 
 	return 0,0
 }
+
+
+//sum cyfr w liczbie
+
+func sum(n int) int {
+
+	tmp := 0
+
+
+	for n >0 {
+
+		tmp += n%10
+		n /=10
+	}
+
+	return  tmp
+}
+
