@@ -32,5 +32,13 @@ func main() {
 
 	}
 
+	m3["a1"] = "a2a2"
+	for key, value := range m3{
+
+		fmt.Println(key,"-",value)
+	}
+
+
+
 
 }
