@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net/http"
-	"log"
 	"bufio"
 	"fmt"
+	"log"
+	"net/http"
 	"os"
 )
 
@@ -14,23 +14,23 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-
 	defer res.Body.Close()
 
 	sc := bufio.NewScanner(res.Body)
 	sc.Split(bufio.ScanWords)
 
-	words := make(map[string]string)
-	w := make([]string, 0)
-	buckets := make([]int, 200)
+	buckets := make([][]string, 12)
 
+	for i := 0; i < 12; i++ {
+		buckets = append(buckets, []string{})
+	}
 
 	for sc.Scan() {
-		words[sc.Text()] = ""
-		w = append(w, sc.Text())
-		n := HashBucket(sc.Text())
 
-		buckets[n]++
+		l := sc.Text()
+		n := HashBucket(l, 12)
+
+		buckets[n] = append(buckets[n], l)
 
 	}
 
@@ -38,20 +38,29 @@ func main() {
 		fmt.Fprint(os.Stderr, "bład", err)
 	}
 
-	for i := 0; i < len(w); i++ {
-		//fmt.Println(w[i])
-		if i == 200 {
-			log.Println("Break")
-			break
-
-		}
+	for i := 0; i < 12; i++ {
+		fmt.Println(i, " - ", len(buckets[i]))
 	}
 
+	word := "zordon"
+	location := HashBucket(word, 12)
 
-	fmt.Println(buckets[97:123])
+	for _, v := range buckets[location] {
+		if v == word {
+			fmt.Println("Bucket:",location,"have word:",v)
+		}
+
+	}
 
 }
 
-func HashBucket(w string) int {
-	return int(w[0])
+func HashBucket(w string, buckets int) int {
+
+	var sum int
+
+	for _, v := range w {
+		sum += int(v)
+	}
+
+	return sum % buckets
 }
