@@ -14,7 +14,9 @@ type  addr struct {
 
 func main() {
 	a := addr{"Poland"}
-	me := person{"Maciej","Michalik",27,a}
+	me := person{"Maciej","Michalik",27,addr{"poland"}}
+	me2 := person{"Maciej","Michalik",27,a}
+	fmt.Println(me2)
 	fmt.Println(me)
 	fmt.Println(me.first,me.last,me.age,me.adres.country)
 
