@@ -91,4 +91,5 @@ func main() {
 
 	p1.sayHi()
 	p2.sayHi()
+	p2.person.sayHi()
 }
