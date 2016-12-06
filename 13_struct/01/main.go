@@ -79,9 +79,9 @@ func main() {
 		age: 27,
 		addr: addr{
 			country:"Poland",
-			city: city{
-				city:"Wieliczka",
-			},
+				city: city{
+					city:"Wieliczka",
+				},
 		},
 		},
 	LicenseToKill: true,
