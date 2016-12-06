@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"encoding/json"
+	"os"
+	"strings"
 )
 
 
@@ -43,5 +45,19 @@ func main() {
 	fmt.Println(p2.Age)
 	//fmt.Println(p2.notExported)
 	fmt.Println(p2.A)
+
+	fmt.Println("-----------------")
+	p3 := Person{"Maciek","Michalik",27,6}
+	json.NewEncoder(os.Stdout).Encode(p3)
+
+	var p4 Person
+	bs3 :=strings.NewReader(`{"First":"Maciek","Last":"Michalik","Age":27,"score":7}`)
+	json.NewDecoder(bs3).Decode(&p4)
+
+	fmt.Println(p4.First)
+	fmt.Println(p4.Last)
+	fmt.Println(p4.Age)
+	fmt.Println(p4.A)
+
 
 }
