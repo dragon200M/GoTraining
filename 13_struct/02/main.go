@@ -16,6 +16,19 @@ type Person struct {
 	A int `json:"score"` //"-" pomijamy, "string" nazwa pola
 }
 
+type Animal struct {
+	Name string
+	Name2 string
+}
+
+type Dog struct {
+	Animal
+	Voice string
+
+
+}
+
+
 func main() {
 	//Marshal
 	p1:=Person{"Maciek","Michalik",27,6}
@@ -59,5 +72,13 @@ func main() {
 	fmt.Println(p4.Age)
 	fmt.Println(p4.A)
 
+	fmt.Println("Dog")
+	d1 := Dog{
+		Animal: Animal{"Rocky",
+		},Voice:"Wrrr",
+
+	}
+
+	json.NewEncoder(os.Stdout).Encode(d1)
 
 }
