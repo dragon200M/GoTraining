@@ -59,6 +59,10 @@ func main() {
 	sort.Sort(sort.Reverse(sort.IntSlice(n3)))
 	fmt.Println(n3)
 
+	
+	sort.Sort(sort.Reverse(ByNameS(studyGroup2)))
+	fmt.Println(studyGroup2)
+
 
 
 
