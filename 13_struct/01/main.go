@@ -1,18 +1,14 @@
 package main
 
-
-
 import (
-	"fmt")
+	"fmt"
+)
 
-
-type person struct{
+type person struct {
 	first string
-	last string
-	age int
+	last  string
+	age   int
 	addr
-
-
 }
 
 type doubleZero struct {
@@ -21,15 +17,14 @@ type doubleZero struct {
 }
 
 func (p person) sayHi() {
-	fmt.Println("hi, my name is",p.first)
+	fmt.Println("hi, my name is", p.first)
 }
 
-func (d doubleZero) sayHi()  {
-	fmt.Println("hi",d.LicenseToKill)
+func (d doubleZero) sayHi() {
+	fmt.Println("hi", d.LicenseToKill)
 }
 
-
-type  addr struct {
+type addr struct {
 	country string
 	city
 }
@@ -39,52 +34,45 @@ type city struct {
 }
 
 type postCode interface {
-
 }
 
 func main() {
-	a := addr{"Poland",city{"Cracow"}}
-	me := person{"Maciej","Michalik",27,addr{"poland",city{"Cracow"}}}
-	me2 := person{"Maciej","Michalik",27,a}
+	a := addr{"Poland", city{"Cracow"}}
+	me := person{"Maciej", "Michalik", 27, addr{"poland", city{"Cracow"}}}
+	me2 := person{"Maciej", "Michalik", 27, a}
 	fmt.Println(me2)
 	fmt.Println(me)
-	fmt.Println(me.first,me.last,me.age,me.country,me.city.city)
+	fmt.Println(me.first, me.last, me.age, me.country, me.city.city)
 
 	me.sayHi()
 
-
-
-
-	p1:=person{
-		first :"M",
-		last:"M",
-		age: 27,
+	p1 := person{
+		first: "M",
+		last:  "M",
+		age:   27,
 		addr: addr{
-			country:"Poland",
+			country: "Poland",
 			city: city{
-				city:"Wieliczka",
+				city: "Wieliczka",
 			},
 		},
-
-
 	}
-
 
 	fmt.Println(p1)
 
-	p2:=doubleZero{
+	p2 := doubleZero{
 		person: person{
-		first :"M",
-		last:"M",
-		age: 27,
-		addr: addr{
-			country:"Poland",
+			first: "M",
+			last:  "M",
+			age:   27,
+			addr: addr{
+				country: "Poland",
 				city: city{
-					city:"Wieliczka",
+					city: "Wieliczka",
 				},
+			},
 		},
-		},
-	LicenseToKill: true,
+		LicenseToKill: true,
 	}
 
 	fmt.Println(p2)

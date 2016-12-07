@@ -9,18 +9,17 @@ func main() {
 		i++
 	}
 
-	for{
+	for {
 		i++
-		if i%2 == 0{
+		if i%2 == 0 {
 			fmt.Println(i)
 			continue
 
 		}
 
-		if i >=20 {
+		if i >= 20 {
 			break
 		}
-
 
 	}
 	for i := 50; i <= 140; i++ {

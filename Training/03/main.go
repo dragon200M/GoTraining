@@ -39,7 +39,6 @@ greatest product. What is the value of this product?
 
 func main() {
 
-
 	number := `73167176531330624919225119674426574742355349194934
 	96983520312774506326239578318016984801869478851843
 	85861560789112949495459501737958331952853208805511
@@ -63,16 +62,12 @@ func main() {
 
 	var n2 [1000]int64 = addNumbers(number)
 
-
-	fmt.Println("greatest product:",gP(n2))
+	fmt.Println("greatest product:", gP(n2))
 
 }
 
-
-func addNumbers(number string) [1000]int64{
+func addNumbers(number string) [1000]int64 {
 	//removing whitespace from string "number"
-
-
 
 	var t [1000]int64 // only digit from number string
 	re := `[0-9]`
@@ -83,7 +78,7 @@ func addNumbers(number string) [1000]int64{
 
 		if v.MatchString(string(i)) {
 
-			n, err := strconv.ParseInt(v.FindString(string(i)),10,64)
+			n, err := strconv.ParseInt(v.FindString(string(i)), 10, 64)
 
 			if err != nil {
 				log.Fatal(err)
@@ -99,17 +94,15 @@ func addNumbers(number string) [1000]int64{
 
 }
 
-func gP(n2 [1000]int64) int64{
+func gP(n2 [1000]int64) int64 {
 
-
-	var p1 int64= 1
-	var p2 int64= 0
-
+	var p1 int64 = 1
+	var p2 int64 = 0
 
 	for j := 0; j < len(n2)-12; j++ {
 
 		for k := j; k < j+13; k++ {
-			p1 = p1*n2[k]
+			p1 = p1 * n2[k]
 			//fmt.Print(n2[k],"*")
 		}
 		//fmt.Print("=",p1,"\n")
@@ -118,7 +111,7 @@ func gP(n2 [1000]int64) int64{
 			p2 = p1
 		}
 
-		p1 =1
+		p1 = 1
 	}
 
 	return p2

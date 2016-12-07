@@ -62,27 +62,24 @@ func odwNapis(txt string) string {
 	return string(r)
 }
 
-
 func odwNapis2(txt string) string {
 
-	r :=[]rune(txt)
+	r := []rune(txt)
 
-	for i,j:=0,len(r)-1;i<j;i,j=i+1,j-1{
-		r[i],r[j]=r[j],r[i]
+	for i, j := 0, len(r)-1; i < j; i, j = i+1, j-1 {
+		r[i], r[j] = r[j], r[i]
 
 	}
 	return string(r)
 
 }
 
-
-func odwInt2(n int) int{
-	tmp:=n
-	i:=0
-
+func odwInt2(n int) int {
+	tmp := n
+	i := 0
 
 	for tmp > 0 {
-		tmp=tmp/10
+		tmp = tmp / 10
 		i++
 	}
 
@@ -91,15 +88,15 @@ func odwInt2(n int) int{
 	w := 0
 
 	for i > 0 {
-		j := i -1
+		j := i - 1
 
-		for j > 0{
-			p=p*10
+		for j > 0 {
+			p = p * 10
 			j--
 		}
-		r = n%10
-		n=n/10
-		w+=p*r
+		r = n % 10
+		n = n / 10
+		w += p * r
 		p = 1
 		i--
 	}

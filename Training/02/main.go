@@ -13,7 +13,6 @@ import (
 
 func main() {
 
-
 	r1 := `(p[0-9]+:)+`
 
 	var valid = regexp.MustCompile(r1)
@@ -26,13 +25,7 @@ func main() {
 
 	defer file.Close()
 
-
-
 	scanner := bufio.NewScanner(file)
-
-
-
-
 
 	var p [100]string
 	i := 0
@@ -44,12 +37,11 @@ func main() {
 		}
 	}
 
-	fmt.Println("Pytań jest:",i)
+	fmt.Println("Pytań jest:", i)
 
 	r := rand.NewSource(time.Now().UnixNano())
 	s := rand.New(r)
 	z := 0
-
 
 	file2, err2 := os.Create("zadanie")
 
@@ -62,16 +54,11 @@ func main() {
 	for z < 5 {
 		zm := s.Intn(i)
 
-			fmt.Println(p[zm])
-			file2.WriteString(p[zm] + "\n")
+		fmt.Println(p[zm])
+		file2.WriteString(p[zm] + "\n")
 
-			z++
-
+		z++
 
 	}
-
-
-
-
 
 }

@@ -112,7 +112,7 @@ func ul(n int) (float32, int) {
 }
 
 func ul2(n int) (float32, int) {
-	t1 :=n
+	t1 := n
 	t := n
 	li := 0
 	for t > 0 {
@@ -127,34 +127,28 @@ func ul2(n int) (float32, int) {
 	tl := li
 	for j := 0; j < tl; j++ {
 
-
-
-		for n > 0{
+		for n > 0 {
 
 			u = u + float32(n%10)
 			n = n / 10
 
 		}
 
-		if u / float32(li) > 7.0 {
+		if u/float32(li) > 7.0 {
 
-			return u / float32(li),li
+			return u / float32(li), li
 
 		}
 
-		n = t1/10
-		t1 = t1/10
+		n = t1 / 10
+		t1 = t1 / 10
 		u = 0
 		li--
 
-
 	}
 
-
-
-	return 0,0
+	return 0, 0
 }
-
 
 //sum cyfr w liczbie
 
@@ -162,13 +156,11 @@ func sum(n int) int {
 
 	tmp := 0
 
+	for n > 0 {
 
-	for n >0 {
-
-		tmp += n%10
-		n /=10
+		tmp += n % 10
+		n /= 10
 	}
 
-	return  tmp
+	return tmp
 }
-

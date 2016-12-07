@@ -24,21 +24,17 @@ func main() {
 	m3["a1"] = "a1"
 	m3["a2"] = "a2a2"
 
-
-	if val, exists := m3["a1"];exists{
-		delete(m3,"a1")
-		fmt.Println("val: ",val)
-		fmt.Println("exists: ",exists)
+	if val, exists := m3["a1"]; exists {
+		delete(m3, "a1")
+		fmt.Println("val: ", val)
+		fmt.Println("exists: ", exists)
 
 	}
 
 	m3["a1"] = "a2a2"
-	for key, value := range m3{
+	for key, value := range m3 {
 
-		fmt.Println(key,"-",value)
+		fmt.Println(key, "-", value)
 	}
-
-
-
 
 }

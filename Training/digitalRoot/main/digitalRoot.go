@@ -2,7 +2,6 @@ package main
 
 import "strconv"
 
-
 func digitalRoot(n int) int {
 	a := strconv.Itoa(n)
 	sum := 0
@@ -25,4 +24,3 @@ func digitalRoot(n int) int {
 	}
 
 }
-

@@ -47,7 +47,7 @@ func main() {
 
 	for _, v := range buckets[location] {
 		if v == word {
-			fmt.Println("Bucket:",location,"have word:",v)
+			fmt.Println("Bucket:", location, "have word:", v)
 		}
 
 	}

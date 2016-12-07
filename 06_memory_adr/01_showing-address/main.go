@@ -13,7 +13,7 @@ func main() {
 	var b *int = &a
 
 	fmt.Println(b)
-	fmt.Println(*b)//43
+	fmt.Println(*b) //43
 
 	var meters float64
 	fmt.Print("Enter meters swam:")

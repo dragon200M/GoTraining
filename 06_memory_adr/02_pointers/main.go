@@ -13,7 +13,7 @@ func main() {
 	fmt.Println(*b) //43
 
 	*b = 1
-	fmt.Println(a) //1
-	fmt.Println(&a)//0xc82000a3b8
+	fmt.Println(a)  //1
+	fmt.Println(&a) //0xc82000a3b8
 
 }

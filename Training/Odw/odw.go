@@ -1,10 +1,8 @@
 package main
 
-
 import (
 	"fmt"
 	"strconv"
-
 )
 
 func odw(c string) string {
@@ -86,10 +84,10 @@ func count2(tab []int) []int {
 	c := 0
 	for i := 0; i < len(tab); i++ {
 
-		if tab[i] == prev{
-			tmp[c] +=  1
+		if tab[i] == prev {
+			tmp[c] += 1
 
-		}else{
+		} else {
 			c++
 			prev = tab[i]
 			tmp[c] = 1
@@ -99,11 +97,11 @@ func count2(tab []int) []int {
 	w := 0
 	for k := 0; k < len(tmp); k++ {
 		if tmp[k] != 0 {
-			w +=1
+			w += 1
 		}
 	}
 
-	var t =make([]int,w)
+	var t = make([]int, w)
 
 	for l := 0; l < w; l++ {
 
@@ -111,54 +109,50 @@ func count2(tab []int) []int {
 
 	}
 
-
 	return t
 }
 
-func minMax(tab []int) string{
+func minMax(tab []int) string {
 
 	max := tab[0]
 	min := tab[0]
-	for i:=1; i<len(tab);i++ {
+	for i := 1; i < len(tab); i++ {
 
 		if tab[i] > max {
-			max =tab[i]
+			max = tab[i]
 		}
 		if tab[i] < min {
-			min =tab[i]
+			min = tab[i]
 		}
-
 
 	}
 
-	str :="Max:"+strconv.Itoa(max)+" Min:"+ strconv.Itoa(min)
+	str := "Max:" + strconv.Itoa(max) + " Min:" + strconv.Itoa(min)
 
 	return str
 }
 
-func findFirstX(tab []int, x int) (string,int){
+func findFirstX(tab []int, x int) (string, int) {
 
 	i := 0
-	for i < len(tab){
+	for i < len(tab) {
 		if tab[i] == x {
 			return "Znaleziono x pod indeksem:", i
 		}
 		i++
 	}
-	return "Nie znaleziono x:",-1
+	return "Nie znaleziono x:", -1
 }
 
-func binarySearch(tab []int, x int) int{
+func binarySearch(tab []int, x int) int {
 
 	lower := 0
-	upper := len(tab)-1
-
+	upper := len(tab) - 1
 
 	for lower <= upper {
-		middle := lower + (upper - lower)/2
+		middle := lower + (upper-lower)/2
 
 		if tab[middle] == x {
-
 
 			return middle
 
@@ -177,15 +171,14 @@ func binarySearch(tab []int, x int) int{
 	return -1
 }
 
-
 func sumDigit(n int) int64 {
 
 	var wynik int64
 
 	str := strconv.Itoa(n)
-	for _, i := range str{
-		tmp, _:= strconv.ParseInt(string(i),10,64)
-		wynik +=tmp
+	for _, i := range str {
+		tmp, _ := strconv.ParseInt(string(i), 10, 64)
+		wynik += tmp
 	}
 
 	return wynik
@@ -193,26 +186,25 @@ func sumDigit(n int) int64 {
 
 func sumDigit2(n int) int {
 
-	wynik :=0
+	wynik := 0
 
-	for n != 0{
-		wynik += n%10
-		n = n/10
+	for n != 0 {
+		wynik += n % 10
+		n = n / 10
 
 	}
 
 	return wynik
 }
 
-
-func pow(a float64, b float64) float64{
+func pow(a float64, b float64) float64 {
 
 	wynik := 1.0
 
 	if b > 0 {
 		for b > 0 {
 			wynik *= a
-			b -=1
+			b -= 1
 		}
 
 	}
@@ -220,84 +212,81 @@ func pow(a float64, b float64) float64{
 	if b < 0 {
 		for b < 0 {
 			wynik *= a
-			b +=1
+			b += 1
 		}
-		wynik = 1/wynik
+		wynik = 1 / wynik
 
 	}
 
-	return  wynik
+	return wynik
 }
 
-
-func sr(n []float64) float64{
+func sr(n []float64) float64 {
 
 	var wynik float64
 	var li float64
 
-	for _,i := range n {
-		wynik +=i
-		li +=1
+	for _, i := range n {
+		wynik += i
+		li += 1
 
 	}
 
-	return wynik/li
+	return wynik / li
 
 }
 
-func even(n []int) string{
+func even(n []int) string {
 
 	str := ""
-	for _ , i := range n {
-		if i % 2 == 0{
-			str += strconv.Itoa(i)+ " jest parzysta \n"
+	for _, i := range n {
+		if i%2 == 0 {
+			str += strconv.Itoa(i) + " jest parzysta \n"
 		}
 
 	}
-	return  str
+	return str
 }
 
-func dominanta(n []int)int{
+func dominanta(n []int) int {
 
 	var l [10]int //wartosc
 	var w [10]int //ilosc
 
+	for i := 0; i < len(n); i++ {
 
-
-	for i := 0; i<len(n) ; i++{
-
-			if !search(l,n[i]){
-				l[i] = n[i]
-			}
+		if !search(l, n[i]) {
+			l[i] = n[i]
+		}
 	}
 
-	for j:=0;j<len(l);j++ {
+	for j := 0; j < len(l); j++ {
 
-		for k:=0; k<len(n);k++{
-			if l[j] == n[k]{
-				w[j]+=1
-		}
+		for k := 0; k < len(n); k++ {
+			if l[j] == n[k] {
+				w[j] += 1
+			}
 		}
 	}
 
 	max := w[0]
 	in := 0
-	for l:=1;l<len(w);l++{
-		if w[l] > max{
+	for l := 1; l < len(w); l++ {
+		if w[l] > max {
 			max = w[l]
 			in = l
 		}
 	}
 
-	return  l[in]
+	return l[in]
 }
 
 func search(n [10]int, x int) bool {
 
 	s := false
 
-	for i :=0;i<len(n);i++{
-		if n[i] == x{
+	for i := 0; i < len(n); i++ {
+		if n[i] == x {
 			s = true
 
 		}
@@ -310,19 +299,17 @@ func search(n [10]int, x int) bool {
 func smallBigLetter(s string) string {
 	str := []rune(s)
 	count := 0
-	tmp :=make([]rune,len(s))
+	tmp := make([]rune, len(s))
 
-	for i:=0;i<len(str);i++{
-		if count % 2 == 1{
+	for i := 0; i < len(str); i++ {
+		if count%2 == 1 {
 			tmp[i] = str[i]
-			count ++
-		}else if count % 2 == 0{
-			tmp[i] = str[i]-32
-			count ++
+			count++
+		} else if count%2 == 0 {
+			tmp[i] = str[i] - 32
+			count++
 		}
 	}
-
-
 
 	return string(tmp)
 }
@@ -348,41 +335,37 @@ func main() {
 	fmt.Println(count([]int{4, 1, 6, 1, 1, 1, 1}, 1))
 
 	fmt.Println("Różne elementy > 0:  ")
-	fmt.Println(count2([]int{1,1,2,3,4,4,5,5,5}))
+	fmt.Println(count2([]int{1, 1, 2, 3, 4, 4, 5, 5, 5}))
 
 	fmt.Println("MinMax:  ")
-	fmt.Println(minMax([]int{9,1,10,7,8}))
+	fmt.Println(minMax([]int{9, 1, 10, 7, 8}))
 
 	fmt.Println("Pierwszy element:  ")
-	fmt.Println(findFirstX([]int{9,7,10,7,8},11))
-	fmt.Println(findFirstX([]int{9,7,10,7,8},10))
-
+	fmt.Println(findFirstX([]int{9, 7, 10, 7, 8}, 11))
+	fmt.Println(findFirstX([]int{9, 7, 10, 7, 8}, 10))
 
 	fmt.Println("Wyszukiwanie:  ")
-	fmt.Println(binarySearch([]int{1,2,3,4,5,6,7,9,11},11))
-	fmt.Println(binarySearch([]int{1,2,3,4,5,6,7},6))
+	fmt.Println(binarySearch([]int{1, 2, 3, 4, 5, 6, 7, 9, 11}, 11))
+	fmt.Println(binarySearch([]int{1, 2, 3, 4, 5, 6, 7}, 6))
 
 	fmt.Println("Suma Cyfr: ")
 	fmt.Println(sumDigit(148))
 	fmt.Println(sumDigit2(1234))
 
 	fmt.Println("Potęga: ")
-	fmt.Println(pow(6,3))
-	fmt.Println(pow(2,-1))
+	fmt.Println(pow(6, 3))
+	fmt.Println(pow(2, -1))
 
 	fmt.Println("Srednia: ")
-	fmt.Println(sr([]float64{1.2,2.5,3,4}))
+	fmt.Println(sr([]float64{1.2, 2.5, 3, 4}))
 
 	fmt.Println("Parzysta: ")
-	fmt.Println(even([]int{1,2,3,4,5,6,7,9,11,8}))
+	fmt.Println(even([]int{1, 2, 3, 4, 5, 6, 7, 9, 11, 8}))
 
 	fmt.Println("Dominanta: ")
-	fmt.Println(dominanta([]int{1,2,1,2,3,2}))
+	fmt.Println(dominanta([]int{1, 2, 1, 2, 3, 2}))
 
 	fmt.Println("Mała duża litera: ")
 	fmt.Println(smallBigLetter("abcd"))
-
-
-
 
 }
