@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 	var x = 12
@@ -11,6 +14,15 @@ func main() {
 	fmt.Println(int(y)+x)
 	//conversion
 
+	i,err :=strconv.Atoi("56")
+
+	if(err != nil){
+		fmt.Println(err)
+	}
+
+	fmt.Println(i)
+
+	fmt.Println([]byte("56"))
 
 
 }
