@@ -15,17 +15,19 @@ func (z Square) circuit() float64 {
 	return 4*z.a
 }
 
-type Traingle struct {
+type Triangle struct {
 	a float64
 	h float64
 }
 
-func (t Traingle) area() float64 {
+
+
+func (t Triangle) area() float64 {
 
 	return (t.a * t.h) / 2
 }
 
-func (t Traingle) circuit() float64 {
+func (t Triangle) circuit() float64 {
 	return 0
 }
 
@@ -44,9 +46,17 @@ type Shape interface {
 
 func main() {
 	s := Square{12.4}
-	t := Traingle{3.42, 8.2}
+	t := Triangle{3.42, 8.2}
+
 
 	info(s)
 	info(t)
+
+	const con = 42
+	fmt.Println(con+2.1) //work
+
+	const  con2 int =  42
+	fmt.Println(con2+3.1)//doesn't work
+
 
 }
