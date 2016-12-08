@@ -10,7 +10,7 @@ type People struct {
 }
 
 func (p People) String() string{
-	 return fmt.Sprintf("COS %s", p.name)
+	 return fmt.Sprintf("COS %s", p.name) // działa podobnie do metoday toString w Javie
 }
 
 type ByName []People
