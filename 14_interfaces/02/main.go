@@ -11,6 +11,20 @@ type People struct {
 
 func (p People) String() string{
 	 return fmt.Sprintf("COS %s", p.name) // działa podobnie do metoday toString w Javie
+
+// https://golang.org/doc/effective_go.html#printing
+	// If you want to control the default format for a custom
+//type, all that's required is to define a method with the
+//signature String() string on the type. For our simple type T,
+//that might look like this.
+//
+
+//func (t *T) String() string {
+//    return fmt.Sprintf("%d/%g/%q", t.a, t.b, t.c)
+//}
+//fmt.Printf("%v\n", t)
+
+
 }
 
 type ByName []People
