@@ -1,12 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
+var wg sync.WaitGroup
 
 func main() {
-
-	go foo()
-	go bar()
+	wg.Add(2)
+		go foo()
+		go bar()
+	wg.Wait()
 }
 
 
@@ -16,7 +21,7 @@ func foo(){
 		fmt.Println("Foo",i)
 
 	}
-
+	wg.Done()
 }
 
 
@@ -25,5 +30,6 @@ func bar(){
 		fmt.Println("Bar",i)
 
 	}
+	wg.Done()
 
 }
