@@ -9,6 +9,10 @@ type People struct {
 	name string
 }
 
+func (p People) String() string{
+	 return fmt.Sprintf("COS %s", p.name)
+}
+
 type ByName []People
 
 func (a ByName) Len() int           { return len(a) }
@@ -59,9 +63,10 @@ func main() {
 	sort.Sort(sort.Reverse(sort.IntSlice(n3)))
 	fmt.Println(n3)
 
-	
+
 	sort.Sort(sort.Reverse(ByNameS(studyGroup2)))
 	fmt.Println(studyGroup2)
+
 
 
 
