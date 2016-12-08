@@ -57,4 +57,6 @@ func main() {
 		fmt.Println("To nie jest int")
 	}
 
+	//fmt.Println(n+4) //invalid operation: n + 4 (mismatched types interface {} and int)
+
 }
