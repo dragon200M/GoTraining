@@ -15,7 +15,7 @@ func main() {
 	go func(){
 		for i:=0;i<10;i++{
 			c<-i
-			
+
 			zm = i*i*i
 			s<-strconv.Itoa(zm)
 
