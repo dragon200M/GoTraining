@@ -13,6 +13,7 @@ func main() {
 
 	fmt.Println(<-c3 , <-c4)
 
+
 }
 func puller(in chan int) chan int {
 	out := make(chan int)
