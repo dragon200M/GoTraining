@@ -11,12 +11,14 @@ func main() {
 			c1 <- i
 
 		}
+		close(c1)
 	}()
 
 
 
 	for a := range c1 {
-		
+
 		fmt.Println( a)
 	}
+
 }
