@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	//pipline
+	//pipeline
 	zm := gen(2, 3, 4)
 
 	for n := range seq(zm) {
